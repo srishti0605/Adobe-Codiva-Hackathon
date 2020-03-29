@@ -1,3 +1,4 @@
+#include <bits/stdc++.h> 
 #include <string> 
 #include <iostream> 
  int A[1000],B[1000],C[1000];
@@ -15,7 +16,7 @@ struct Node
     } 
 }; 
   
-int Postorder(struct Node* node) 
+void Postorder(struct Node* node) 
 { 
     if (node == NULL) 
         return; 
@@ -29,7 +30,7 @@ int Postorder(struct Node* node)
     i++; 
 } 
  
-int Inorder(struct Node* node) 
+void Inorder(struct Node* node) 
 { 
     if (node == NULL) 
         return; 
@@ -41,7 +42,7 @@ int Inorder(struct Node* node)
     Inorder(node->right); 
 } 
   
-int Preorder(struct Node* node) 
+void Preorder(struct Node* node) 
 { 
     if (node == NULL) 
         return; 
