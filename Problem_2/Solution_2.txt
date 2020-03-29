@@ -1,0 +1,85 @@
+#include <string> 
+#include <iostream> 
+ int A[1000],B[1000],C[1000];
+int i=0,j=0,k=0;
+using namespace std; 
+ 
+struct Node 
+{ 
+    int data; 
+    struct Node* left, *right; 
+    Node(int data) 
+    { 
+        this->data = data; 
+        left = right = NULL; 
+    } 
+}; 
+  
+int Postorder(struct Node* node) 
+{ 
+    if (node == NULL) 
+        return; 
+
+    Postorder(node->left); 
+  
+    
+    Postorder(node->right); 
+  
+    A[i]=node->data;
+    i++; 
+} 
+ 
+int Inorder(struct Node* node) 
+{ 
+    if (node == NULL) 
+        return; 
+  
+    Inorder(node->left); 
+  
+    B[j]=node->data;j++; 
+  
+    Inorder(node->right); 
+} 
+  
+int Preorder(struct Node* node) 
+{ 
+    if (node == NULL) 
+        return; 
+  
+    C[k]=node->data; k++;
+  
+    Preorder(node->left);  
+  
+    Preorder(node->right); 
+} 
+
+double findMedian(int a[], int n) 
+{ 
+   
+    sort(a, a+n); 
+  
+    
+    if (n % 2 != 0) 
+       return (double)a[n/2]; 
+      
+    return (double)(a[(n-1)/2] + a[n/2])/2.0; 
+} 
+
+int main () 
+{ int m;
+  cin>>m;
+ int arr[m];
+ for(int j=0;i<m;i++)
+ {cin>>arr[i];
+ }
+ 
+ double median= findMedian(arr, m) ;
+ 
+
+ cout<<median;
+ //use cin to get console input 
+ 
+ //use cout to print console output 
+ 
+ return 0; 
+}

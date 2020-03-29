@@ -1,0 +1,75 @@
+A company has decided to promote interactions between its female employees in various departments. The objective of this is to ensure that the female employees get a common forum to address their
+grievances and discuss their concerns. In order to do so they want to figure out the pre-existing connections between the various female employees working in their organization.
+
+They have created a number of nodes which are to be connected to form a cluster to find the above information. The nodes are described by a 2D grid of 0s and 1s with n rows and m columns, a
+cell containing a zero denotes a male employee, while a cell containing a one is a cell that denotes a female employee(node).
+The cluster creation happens as follows: for every grid row i, every node in this row is connected with every node in row inext - the first row to have any nodes in it after row i. If there is no such inext , the
+connections don't happen.
+
+Given a grid, describing the nodes(female employee). What is the number of connections in the cluster formed by the nodes in the grid?
+
+In the example below, 3 nodes in the first row get connected with 2 nodes in the second row, forming 6 connections. Then 2 nodes in the second row get connected with 1 node in the last row, forming 2
+connections. There are 8 connections in total:
+
+1 1 0 1
+0 1 1 0
+0 0 0 0
+0 1 0 0
+
+Function Description
+
+Create a function as per the below description. It has the following
+parameter(s):
+
+Parameters:Name 		Type 		Description
+           gridOfNodes 		INTEGER 	Grid
+				2D ARRAY	description
+				
+					
+Return: The function must return an INTEGER denoting the number of connections.
+
+Constraints:
+1 ≤ n ≤ 500
+1 ≤ m ≤ 500
+1 ≤ gridOfNodes[i][j] ≤ 1
+
+Input Format:
+The first line contains an integer, n, denoting the number of rows in gridOfNodes
+The next line contains an integer, m, denoting the number of columns in gridOfNodes
+Each line i of the n subsequent lines (where 0 ≤ i < n) contains m space separated integers each describing the row gridOfNodes[i]
+
+Output Format:
+Output an INTEGER denoting the number of connections.
+
+Sample Case 0:
+
+Input format for custom testing
+5
+3
+0 0 0
+0 0 0
+1 1 1
+0 0 0
+0 0 0
+
+Sample Output
+0
+Sample Output Explanation
+
+There is only one row with nodes, so no connections happen
+
+
+Sample Case 1:
+Input format for custom testing
+3
+7
+1 0 1 1 1 1 0
+0 1 1 0 1 0 1
+1 0 0 0 0 0 1
+Sample Output
+28
+Sample Output Explanation
+5 nodes in the first row get connected with 4 nodes in the second
+row, 20 connections. Then 4 nodes in the second row get connected
+with 2 nodes in the third row, 8 connections. 20+8 = 28 connections
+in total.
